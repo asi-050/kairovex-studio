@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0e27;
+  color: #f5f1ed;
+  font-family: "Georgia", serif;
+  line-height: 1.6;
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cccc;
+}
+
+/* CANVAS CONTAINER */
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* TYPOGRAPHY UTILITIES */
+@layer components {
+  .text-serif-title {
+    @apply font-serif text-5xl tracking-tight font-normal;
+  }
+
+  .text-serif-heading {
+    @apply font-serif text-3xl tracking-tight font-normal;
+  }
+
+  .text-mono-sm {
+    @apply font-mono text-xs tracking-widest uppercase;
+  }
+
+  /* GLASS MORPHISM */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg;
+  }
+
+  /* ANIMATION UTILITIES */
+  .animate-fade-in {
+    @apply animate-fade;
+  }
+
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+}
+
+/* SMOOTH ANIMATIONS */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* POINTER EVENTS */
+canvas {
+  touch-action: none;
+}
